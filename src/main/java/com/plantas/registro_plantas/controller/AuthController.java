@@ -37,4 +37,23 @@ public class AuthController {
                 })
                 .switchIfEmpty(Mono.error(new RuntimeException("Usuario no encontrado")));
     }
+
+    @PostMapping("/register")
+    public Mono<Map<String, String>> register(@RequestBody Map<String, String> body) {
+        String email = body.get("email");
+        String password = body.get("password");
+        return usuarioService.findByEmail(email)
+            .flatMap(u -> Mono.<Map<String, String>>error(new RuntimeException("El correo ya está registrado")))
+            .switchIfEmpty(
+                usuarioService.save(new com.plantas.registro_plantas.model.Usuario() {{
+                    setEmail(email);
+                    setPassword(password);
+                }})
+                .map(usuario -> {
+                    Map<String, String> response = new HashMap<>();
+                    response.put("token", "fake-jwt-token-" + usuario.getId());
+                    return response;
+                })
+            );
+    }
 }

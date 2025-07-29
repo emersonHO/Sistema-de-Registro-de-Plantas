@@ -14,4 +14,5 @@ public class Hierba {
     private String uso;
     private String origen;
     private String propiedades;
+    private Long usuarioId;
 }
