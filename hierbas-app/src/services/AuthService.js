@@ -14,4 +14,10 @@ const logout = () => {
 
 const getToken = () => localStorage.getItem("token");
 
-export default { login, logout, getToken };
+const register = async (email, password) => {
+  const res = await axios.post(`${API}/register`, { email, password });
+  localStorage.setItem("token", res.data.token);
+  return res.data;
+};
+
+export default { login, logout, getToken, register };
