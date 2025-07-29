@@ -10,13 +10,14 @@ export default function LoginPage() {
       await AuthService.login(email, password);
       navigate("/dashboard");
     } catch (err) {
-      alert("Login inválido");
+      // El error se maneja en el componente Login
+      throw err;
     }
   };
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2 style={{ textAlign: "center", marginTop: 32 }}>Login</h2>
       <Login onLogin={handleLogin} />
     </div>
   );
