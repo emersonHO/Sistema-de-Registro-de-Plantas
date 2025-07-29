@@ -1,0 +1,159 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+.card-header {
+  border-radius: 15px 15px 0 0 !important;
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.form-control, .form-select {
+  border-radius: 10px;
+  border: 2px solid #e9ecef;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.badge {
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+.shadow {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+}
+
+/* Estilos personalizados para las hierbas */
+.herb-card {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-left: 4px solid #28a745;
+}
+
+.herb-title {
+  color: #2d5a3d;
+  font-weight: 600;
+}
+
+.herb-scientific {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Estilos para el background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e8 100%);
+  min-height: 100vh;
+}
+
+/* Mejoras para los tabs */
+.nav-tabs .nav-link {
+  border-radius: 10px 10px 0 0;
+  border: none;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+  background: linear-gradient(145deg, #28a745, #20c997);
+  color: white;
+  border: none;
+}
+
+/* Estilo para alertas */
+.alert {
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+}
+
+/* Mejoras para modales */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+}
+
+.modal-header {
+  border-bottom: 1px solid #e9ecef;
+  border-radius: 15px 15px 0 0;
+}
+
+/* Efectos de hover para botones específicos */
+.btn-success:hover {
+  background: linear-gradient(145deg, #218838, #1e7e34);
+  border-color: #1e7e34;
+}
+
+.btn-outline-success:hover {
+  background: linear-gradient(145deg, #28a745, #20c997);
+}
