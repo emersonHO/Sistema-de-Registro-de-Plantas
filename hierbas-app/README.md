@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Hierbas App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web para gestionar tu colección de hierbas medicinales de manera fácil y organizada.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+### 🔐 Sistema de Autenticación Mejorado
+- **Modal de Login/Registro**: Se muestra automáticamente en cada visita a la página
+- **Información del Usuario**: Muestra el nombre del usuario en la esquina superior derecha
+- **Cerrar Sesión**: Botón de logout accesible desde el header
+- **Persistencia de Sesión**: Mantiene la sesión activa entre recargas
 
-### `npm start`
+### 🎨 Experiencia de Usuario Mejorada
+- **Diseño Moderno**: Interfaz limpia y profesional con gradientes y efectos visuales
+- **Responsive Design**: Se adapta a diferentes tamaños de pantalla
+- **Animaciones Suaves**: Transiciones y efectos hover para mejor interactividad
+- **Feedback Visual**: Mensajes de éxito y error claramente diferenciados
+- **Loading States**: Indicadores de carga para mejor UX
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📝 Gestión de Hierbas
+- **Formulario Mejorado**: Campos organizados en grid para mejor visualización
+- **Lista de Hierbas**: Diseño de tarjetas con información bien estructurada
+- **Edición Inline**: Editar hierbas directamente en la lista
+- **Eliminación Segura**: Confirmación antes de eliminar
+- **Estado Vacío**: Mensaje amigable cuando no hay hierbas registradas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tecnologías Utilizadas
 
-### `npm test`
+- **React 19**: Framework principal
+- **React Router**: Navegación
+- **Context API**: Gestión de estado de autenticación
+- **Axios**: Cliente HTTP para API
+- **CSS-in-JS**: Estilos inline para mejor mantenimiento
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estructura del Proyecto
 
-### `npm run build`
+```
+src/
+├── components/
+│   ├── AuthModal.jsx      # Modal de autenticación
+│   ├── Header.jsx         # Header con información del usuario
+│   ├── WelcomePage.jsx    # Página de bienvenida
+│   ├── HierbaForm.jsx     # Formulario de hierbas
+│   └── HierbaList.jsx     # Lista de hierbas
+├── contexts/
+│   └── AuthContext.jsx    # Contexto de autenticación
+├── pages/
+│   └── Dashboard.jsx      # Página principal
+├── services/
+│   ├── AuthService.js     # Servicios de autenticación
+│   └── HierbaService.js   # Servicios de hierbas
+└── App.jsx               # Componente principal
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Funcionalidades Principales
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Autenticación
+- Login y registro con email y contraseña
+- Persistencia de sesión en localStorage
+- Modal que aparece automáticamente para usuarios no autenticados
+- Header con información del usuario y botón de logout
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Gestión de Hierbas
+- Agregar nuevas hierbas con nombre, uso, origen y propiedades
+- Ver lista de hierbas en formato de tarjetas
+- Editar hierbas existentes
+- Eliminar hierbas con confirmación
 
-### `npm run eject`
+### UX/UI
+- Diseño responsive y moderno
+- Gradientes y efectos visuales atractivos
+- Feedback visual para todas las acciones
+- Estados de carga y error bien definidos
+- Animaciones suaves y transiciones
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Instalación y Uso
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Instalar dependencias:
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Iniciar el servidor de desarrollo:
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Abrir [http://localhost:3000](http://localhost:3000) en el navegador
 
-## Learn More
+## Notas Técnicas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- La aplicación requiere un backend que proporcione endpoints para autenticación y gestión de hierbas
+- Los tokens de autenticación se almacenan en localStorage
+- La información del usuario se extrae del email (parte antes del @)
+- El diseño utiliza CSS-in-JS para mejor mantenimiento y encapsulación
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Mejoras Futuras
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Implementar búsqueda y filtros de hierbas
+- [ ] Agregar categorías y tags
+- [ ] Subir imágenes de hierbas
+- [ ] Exportar/importar datos
+- [ ] Modo oscuro
+- [ ] Notificaciones push
